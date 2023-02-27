@@ -1,0 +1,96 @@
+<%-include("./partials/header")-%>
+<body class="min-h-screen flex flex-col space-y-4 items-center p-8">
+    <h1 class="text-5xl font-bold">STUDENT DETAILS</h1>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Name</h1>
+        <p><%= user.name %></p>
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Photo</h1>
+        <img class="h-50" src="<%= user.photo %>" alt="">
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Signature</h1>
+        <img class="w-40" src="<%= user.signature %>" alt="">
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">DOB</h1>
+        <p><%= user.dob %></p>
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Address</h1>
+        <p><%= user.address %></p>
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">PAN</h1>
+        <p><%= user.pan %></p>
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Aadhaar</h1>
+        <p><%= user.aadhaar %></p>
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Institute Name</h1>
+        <p><%= user.institute %></p>
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Application Status</h1>
+        <% if (user.loanStatus === 1){ %>
+            <p>Pending</p>
+        <% } else if (user.loanStatus === 2) { %>
+            <p>Approved</p>
+        <% } else if (user.loanStatus === 3) { %>
+            <p>Money Acquired by Student</p>
+        <% } else if (user.loanStatus === 4) { %>
+            <p>Money Repayed</p>
+        <% } %>
+        
+    </div>
+    <form action="/bankcustomer/<%= user.username %>" method="post">
+        <select name="status" id="status" onchange="this.form.submit()" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option value=1>Pending</option>
+            <option value=2>Approved</option>
+            <option value=3>Money Acquired</option>
+            <option value=4>Money Repayed</option>
+        </select>
+    </form>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Bonafide</h1>
+        <img src="<%= user.bonafide %>" alt="">
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Fee Structure</h1>
+        <img src="<%= user.feeStructure %>" alt="">
+    </div>
+
+    <h1 class="text-5xl font-bold">CO-APPLICANT DETAILS</h1>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Co-Applicant Name</h1>
+        <p><%= user.coApplicantName %></p>
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Co-Applicant Photo</h1>
+        <img class="h-50" src="<%= user.coApplicantPhoto %>" alt="">
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Co-Applicant Signature</h1>
+        <img class="w-40" src="<%= user.coApplicantSignature %>" alt="">
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Co-Applicant DOB</h1>
+        <p><%= user.coApplicantDob %></p>
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Co-Applicant Address</h1>
+        <p><%= user.coApplicantAddress %></p>
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Co-Applicant PAN</h1>
+        <p><%= user.coApplicantPan %></p>
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-red-500">Co-Applicant Aadhar</h1>
+        <p><%= user.coApplicantAadhaar %></p>
+    </div>
+</body>
+</html>

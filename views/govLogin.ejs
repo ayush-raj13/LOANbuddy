@@ -1,0 +1,12 @@
+<%-include("./partials/header")-%>
+<body class="min-h-screen">
+    <h1 class="text-3xl">GOVERNMENT LOGIN</h1>
+    <form action="/govlogin" method="post" class="flex flex-col justify-center items-center space-y-8 w-64">
+        <label for="">E-mail</label>
+        <input type="email" name="username" class="border-2 border-black">
+        <label for="">Password</label>
+        <input type="password" name="password" class="border-2 border-black">
+        <button type="submit" class="bg-blue-500 hover:bg-blue-800 p-4 rounded-md shadow-xl text-white font-bold">Submit</button>
+    </form>
+</body>
+</html>

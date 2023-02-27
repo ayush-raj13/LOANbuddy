@@ -1,0 +1,28 @@
+<%-include("./partials/header")-%>
+<body class="min-h-screen flex flex-col space-y-4 items-center justify-center">
+    <h1 class="text-5xl font-bold"><%= state %> GOVERNMENT STUDENT LOAN</h1>
+    <div>
+        <h1 class="text-3xl font-bold py-4">Live Scholarship</h1>
+        <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+            <li>Commonwealth scholarship and fellowship</li>
+            <li>Chevening Scholarship</li>
+            <li>Vice Chancellor's International Scholarships</li>
+            <li>Rhodes Scholarships</li>
+            <li>Inlaks Shivadasani Foundation Scholarships</li>
+            <li>Felix Scholarships</li>
+        </ul>
+    </div>
+
+    <div class="flex flex-col space-y-4">
+        <% if (!user.loanStatus) { %>
+            <h1 class="text-3xl font-bold py-4 text-white bg-blue-500">Apply for Loan</h1>
+            <a class="p-4 bg-red-500 rounded-xl shadow-xl w-20" href=<%= applyUrl %>>Submit</a>
+        <% } %>
+    </div>
+
+    <div>
+        <h1>Status</h1>
+        <p><%= user.loanStatus %></p>
+    </div>
+</body>
+</html>

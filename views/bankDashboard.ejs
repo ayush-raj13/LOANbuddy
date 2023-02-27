@@ -1,0 +1,21 @@
+<%-include("./partials/header")-%>
+<body class="min-h-screen grid grid-cols-4 gap-4">
+    <% userList.forEach((user) => { %>
+        <div class="w-72 h-72 bg-red-500 flex flex-col items-center justify-center m-4 rounded-xl shadow-2xl">
+            <img class="h-36" alt="" src=<%= user.photo %>>
+            <p class="text-white">Name: <%= user.name %></p>
+            <p class="text-white">Loan Amount: <%= user.loanAmount %></p>
+            <% if (user.loanStatus === 1){ %>
+                <p class="text-white">Status: Pending</p>
+            <% } else if (user.loanStatus === 2){ %>
+                <p class="text-white">Status: Approved</p>
+            <% } else if (user.loanStatus === 3){ %>
+                <p class="text-white">Status: Money Acquired</p>
+            <% } else if (user.loanStatus === 1){ %>
+                <p class="text-white">Status: Money Repayed</p>
+            <% } %>
+            <a class="bg-blue-500 p-2 rounded-md shadow-xl" href="/bankcustomer/<%= user.username %>">View</a>
+        </div>
+    <% }) %>
+</body>
+</html>

@@ -1,12 +1,70 @@
-<%-include("./partials/header")-%>
-<body class="min-h-screen">
-    <h1 class="text-3xl">BANK LOGIN</h1>
-    <form action="/banklogin" method="post" class="flex flex-col justify-center items-center space-y-8 w-64">
-        <label for="">E-mail</label>
-        <input type="email" name="username" class="border-2 border-black">
-        <label for="">Password</label>
-        <input type="password" name="password" class="border-2 border-black">
-        <button type="submit" class="bg-blue-500 hover:bg-blue-800 p-4 rounded-md shadow-xl text-white font-bold">Submit</button>
-    </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLogin</title>
+    <link rel="stylesheet" href="./css/login2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<body>
+    <div class="login-card-container">
+        <div class="login-card">
+            <div class="login-card-logo">
+                <img src="./img/logo2.jpg" alt="logo">
+            </div>
+            <div class="login-card-header">
+                <h1>Sign In</h1>
+                <div>Please login for use this platform</div>
+            </div>
+            <form  class="login-card-form" action="/banklogin" method="post" >
+                
+                <div class="form-item">
+                    <span class="form-item-icon material-symbols-outlined">
+                        mail
+                        </span>
+                        <input type="text" name="username" placeholder="Enter email" required autofocus>
+                </div>
+                <div class="form-item">
+                    <span class="form-item-icon material-symbols-outlined">
+                        lock
+                        </span>
+                        <input type="password" name="password" placeholder="Enter password" required autofocus>
+                </div>
+                <div class="form-item-other">
+                    <div class="checkbox">
+                        <input type="checkbox" id="rememberMeCheckboc">Remembar Me
+                    </div>
+                    <a href="#">Forget Password</a>
+                </div>
+                <button type="submit">Sign In</button>
+                </form>
+                <div class="login-card-footer">
+                    Already have an account? <a href="/login2.html">Login</a>
+                </div>
+            </div>
+            <div class="login-card-social">
+                <div>Other Sign-in Platform</div>
+                <div class="login-card-social-btn">
+                    <a href="#
+                    "><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                      </svg></a>
+                    <a href="#
+                    "><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-google" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8" />
+                      </svg></a>
+                </div>
+            </div>
+
+
+            
+        </div>
+    </div>
 </body>
 </html>

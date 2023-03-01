@@ -1,21 +1,111 @@
-<%-include("./partials/header1")-%>
-<body class="min-h-screen grid grid-cols-4 gap-4">
-    <% userList.forEach((user) => { %>
-        <div class="w-72 h-72 bg-red-500 flex flex-col items-center justify-center m-4 rounded-xl shadow-2xl">
-            <img class="h-36" alt="" src=<%= user.photo %>>
-            <p class="text-white">Name: <%= user.name %></p>
-            <p class="text-white">Loan Amount: <%= user.loanAmount %></p>
-            <% if (user.loanStatus === 1){ %>
-                <p class="text-white">Status: Pending</p>
-            <% } else if (user.loanStatus === 2){ %>
-                <p class="text-white">Status: Approved</p>
-            <% } else if (user.loanStatus === 3){ %>
-                <p class="text-white">Status: Money Acquired</p>
-            <% } else if (user.loanStatus === 1){ %>
-                <p class="text-white">Status: Money Repayed</p>
-            <% } %>
-            <a class="bg-blue-500 p-2 rounded-md shadow-xl" href="/bankcustomer/<%= user.username %>">View</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="/css/bankstatus.css" />
+  </head>
+  <body>
+    <div class="container-fluid mb-4 px-0">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Student Profiles</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+             
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Status
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/bankhome/pending">Pending</a></li>
+                  <li><a class="dropdown-item" href="bankhome/approved">Approved</a></li>
+                  <li><a class="dropdown-item" href="bankhome/money-acquired">Money acquired</a></li>
+                  <li><a class="dropdown-item" href="bankhome/money-repaid">Money repaid</a></li>
+                </ul>
+              </li>
+             
+            </ul>
+            <form class="d-flex">
+              <a class="btn btn-outline btn-light mx-4" href="/logout"
+                >Logout</a
+              >
+            </form>
+          </div>
         </div>
-    <% }) %>
-</body>
+      </nav>
+    </div>
+    <div class="wrapper">
+      <% userList.forEach((user,i) => { %>
+      <div class="item">
+        <div class="<%=(i%2 === 0 ? "card rgb": "card")%>">
+          <div class="card-image card2">
+            <img alt="" src=<%=user.photo%>>
+          </div>
+          <div class="card-text card2">
+            <h2 style="color:white;"><%= user.name %></h2>
+            <p><span style="color: white">Loan Amount</span>: <%= user.loanAmount %></p>
+           <% if (user.loanStatus === 1){ %>
+              <p><span style="color: white;">Status</span>: Pending</p>
+          <% } else if (user.loanStatus === 2){ %>
+              <p><span style="color: white;">Status</span>: Approved</p>
+          <% } else if (user.loanStatus === 3){ %>
+              <p><span style="color: white;">Status</span>: Money Acquired</p>
+          <% } else if (user.loanStatus === 1){ %>
+              <p><span style="color: white;">Status</span>: Money Repayed</p>
+          <% } %> 
+          <div class="d-flex justify-content-center" id="view"><a class="btn btn-light w-75" href="/bankcustomer/<%= user.username %>">View</a></div>
+          </div>
+        </div>
+      </div>
+   <% }) %>
+    </div>
+
+    <!-- <script src="vanilla-tilt.min.js"></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".card"), {
+        glare: true,
+        reverse: true,
+        "max-glare": 0.15,
+      });
+    </script>
+  </body>
 </html>

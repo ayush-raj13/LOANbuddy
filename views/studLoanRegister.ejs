@@ -1,63 +1,126 @@
-<%-include("./partials/header1")-%>
-<body class="min-h-screen flex flex-col items-center">
-    <h1 class="text-3xl">STUDENT LOAN REGISTER</h1>
-    <form method="post" class="flex flex-col justify-center items-center space-y-2 w-64" action=<%= postUrl %>>
-        <label class="font-bold" for="">Name</label>
-        <input type="text" name="name" id="" class="border-2 border-black">
-        <label class="font-bold" for="">Photo</label>
-        <input type="file" id="stud-img" name="img" accept="image/*">
-        <input type="hidden" class="hiddenField" name="studimgurl" id="stud-img-url" />
-        <label class="font-bold" for="">Signature</label>
-        <input type="file" id="stud-signature" name="signature" accept="image/*">
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loan Register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <base href="/">
+  <link rel="stylesheet" href="css/studLoanRegister.css">
+</head>
+
+<body>
+
+  <main class="card w-50 p-4 my-3 mx-auto">
+    <header class="card-title d-flex justify-content-center">
+      <p>Register Loan</p>
+    </header>
+    <form>
+      <div class="mb-3">
+        <label for="exampleName" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" id="exampleName" aria-describedby="NameHelp">
+      </div>
+      <div class="mb-3">
+        <label for="examplePhoto" class="form-label">Photo</label>
+        <input type="file" class="form-control" name="img"accept="image/*" id="examplePhoto">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Signature</label>
+        <input type="file" id="stud-signature" class="form-control" name="signature" accept="image/*">
         <input type="hidden" class="hiddenField" name="studsignatureurl" id="stud-signature-url" />
-        <label class="font-bold" for="">DOB</label>
-        <input type="date" name="dob" id="">
-        <label class="font-bold" for="">Address</label>
-        <input type="text" name="address" class="border-2 border-black">
-        <label class="font-bold" for="">PAN</label>
-        <input type="text" name="pan" class="border-2 border-black">
-        <label class="font-bold" for="">Aadhaar</label>
-        <input type="text" name="aadhaar" class="border-2 border-black">
-        <label class="font-bold" for="">Select Bank</label>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">DOB</label>
+        <input type="date" class="form-control" name="dob" id="">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Address</label>
+        <input type="text" class="form-control" name="address" class="border-2 border-black">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">PAN</label>
+        <input type="text" class="form-control" name="pan" class="border-2 border-black">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Aadhaar</label>
+        <input type="text" class="form-control" name="aadhaar" class="border-2 border-black">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Select Bank</label>
         <select name="bank" id="">
-            <option value="State Bank of India">State Bank of India</option>
-            <option value="Punjab National Bank">Punjab National Bank</option>
-            <option value="Central Bank of India">Central Bank of India</option>
-            <option value="HDFC">HDFC</option>
+          <option value="State Bank of India">State Bank of India</option>
+          <option value="Punjab National Bank">Punjab National Bank</option>
+          <option value="Central Bank of India">Central Bank of India</option>
+          <option value="HDFC">HDFC</option>
         </select>
-        <label class="font-bold" for="">Loan Amount</label>
-        <input type="number" name="loan" id="" class="border-2 border-black">
-
-        <label class="font-bold" for="">Co-Applicant Name</label>
-        <input type="text" name="applicantname" id="" class="border-2 border-black">
-        <label class="font-bold" for="">Co-Applicant Photo</label>
-        <input type="file" id="co-app-img" name="applicantimg" accept="image/*">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Loan Amount</label>
+        <input type="number" class="form-control" name="loan" id="" class="border-2 border-black">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Co-Applicant Name</label>
+        <input type="text" class="form-control" name="applicantname" id="" class="border-2 border-black">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Co-Applicant Photo</label>
+        <input type="file" class="form-control" id="co-app-img" name="applicantimg" accept="image/*">
         <input type="hidden" class="hiddenField" name="coappimgurl" id="co-app-img-url" />
-        <label class="font-bold" for="">Co-Applicant Signature</label>
-        <input type="file" id="co-app-signature" name="applicantsignature" accept="image/*">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Co-Applicant Signature</label>
+        <input type="file" class="form-control" id="co-app-signature" name="applicantsignature" accept="image/*">
         <input type="hidden" class="hiddenField" name="coappsignatureurl" id="co-app-signature-url" />
-        <label class="font-bold" for="">Co-Applicant DOB</label>
-        <input type="date" name="applicantdob" id="">
-        <label class="font-bold" for="">Co-Applicant Address</label>
-        <input type="text" name="applicantaddress" class="border-2 border-black">
-        <label class="font-bold" for="">Co-Applicant PAN</label>
-        <input type="text" name="applicantpan" class="border-2 border-black">
-        <label class="font-bold" for="">Co-Applicant Aadhaar</label>
-        <input type="text" name="applicantaadhaar" class="border-2 border-black">
-
-        <label class="font-bold" for="">Institute Name</label>
-        <input type="text" name="institutename" class="border-2 border-black">
-        <label class="font-bold" for="">Bonafide</label>
-        <input type="file" id="bonafide" name="bonafide">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Co-Applicant DOB</label>
+        <input type="date" class="form-control" name="applicantdob" id="">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Co-Applicant Address</label>
+        <input type="text" class="form-control" name="applicantaddress" class="border-2 border-black">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Co-Applicant PAN</label>
+        <input type="text" class="form-control" name="applicantpan" class="border-2 border-black">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Co-Applicant Aadhaar</label>
+        <input type="text" class="form-control" name="applicantaadhaar" class="border-2 border-black">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Institute Name</label>
+        <input type="text" class="form-control" name="institutename" class="border-2 border-black">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Bonafide</label>
+        <input type="file" class="form-control" id="bonafide" name="bonafide">
         <input type="hidden" class="hiddenField" name="bonafideurl" id="bonafide-url" />
-        <label class="font-bold" for="">Fee Structure</label>
-        <input type="file" id="fee-structure" name="feestructure">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="">Fee Structure</label>
+        <input type="file" class="form-control" id="fee-structure" name="feestructure">
         <input type="hidden" class="hiddenField" name="feestructureurl" id="fee-structure-url" />
-
-        <button type="submit" class="bg-blue-500 hover:bg-blue-800 p-4 rounded-md shadow-xl text-white font-bold">Submit</button>
+      </div>
+      <button type="submit" class="btn">Submit</button>
     </form>
-
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/js/studLoanRegister.js"></script>
 </body>
+
 </html>

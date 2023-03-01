@@ -5,7 +5,7 @@ const govSchema = new mongoose.Schema({
     username: String,
     password: String,
     userType: String,
-    gov: String
+    jurisdiction: String
   });
   
   govSchema.plugin(passportLocalMongoose);

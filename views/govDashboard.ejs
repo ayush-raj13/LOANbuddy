@@ -1,12 +1,89 @@
 <%-include("./partials/header1")-%>
-<body class="min-h-screen grid grid-cols-4 gap-4">
-    <a class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out absolute top-4 right-4" href="/logout">LOGOUT</a>
-    <div class="w-72 h-72 bg-red-500 flex flex-col items-center justify-center mx-4 mt-32 rounded-xl shadow-2xl">
-        <img src="https://picsum.photos/150" alt="">
-        <p class="text-white">Name: Ayush Raj</p>
-        <p class="text-white">Loan Amount: 400000/_</p>
-        <p class="text-white">Bank: State Bank of India</p>
-        <p class="text-white">Status: Pending</p>
+<link rel="stylesheet" href="css/govDashboard.css">
+<!-- Navbar -->
+<section class="relative h-screen flex flex-col items-center justify-center text-center text-white py-0 px-3">
+  <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
+      <video class="min-w-full min-h-full absolute object-cover" src="video/govDashboard.mp4" type="video/mp4" autoplay muted loop></video>
+  </div>
+  <!-- <h1 class="font-light text-6xl z-10 absolute top-40">Dashboard</h1> -->
+  <div class="content z-10 absolute top-40">
+    <h2 class="text_shadows">Dashboard</h2>
+  </div>
+  <section1 class="video-content space-y-2 antialiased bg-gray-100 text-gray-600 h-screen px-4 bg-[url('/img/govdashbackground.jpg')] bg-cover">
+    <div class="flex flex-col justify-center h-full sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px]">
+        <!-- Table -->
+        <div class="overflow-y w-full max-w-7xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200 bg-clip-padding bg-opacity-10"  style="backdrop-filter: blur(30px)">
+            <header class="px-5 py-4 border-b border-gray-100">
+                <h2 class="font-semibold text-white">Student List</h2>
+            </header>
+            <div class="p-3">
+                <div class="overflow-x-auto overflow-y-scroll h-100">
+                    <table class="table-auto w-full">
+                        <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
+                            <tr>
+                                <th class="p-2 whitespace-nowrap">
+                                    <div class="font-semibold text-left">Name</div>
+                                </th>
+                                <th class="p-2 whitespace-nowrap">
+                                    <div class="font-semibold text-left">Email</div>
+                                </th>
+                                <th class="p-2 whitespace-nowrap">
+                                    <div class="font-semibold text-left">Loan Amount</div>
+                                </th>
+                                <th class="p-2 whitespace-nowrap">
+                                    <div class="font-semibold text-center">Status</div>
+                                </th>
+                                <th class="p-2 whitespace-nowrap">
+                                    <div class="font-semibold text-center">View</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm divide-y divide-gray-100">
+                        <% userList.forEach((user) => { %>
+                            <tr>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="<%= user.photo %>" width="40" height="40" alt="Alex Shatov"></div>
+                                        <div class="font-medium text-white"><%= user.name %></div>
+                                    </div>
+                                </td>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="text-left text-white"><%= user.username %></div>
+                                </td>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="text-left font-medium text-green-300">₹ <%= user.loanAmount %></div>
+                                </td>
+                                <td class="p-2 whitespace-nowrap">
+                                    <% if (user.loanStatus === 0){ %>
+                                        <div class="text-center text-white">Not Initiated</div>
+                                    <% } else if (user.loanStatus === 1){ %>
+                                        <div class="text-center text-white">Pending</div>
+                                    <% } else if (user.loanStatus === 2){ %>
+                                        <div class="text-center text-white">Approved</div>
+                                    <% } else if (user.loanStatus === 3){ %>
+                                        <div class="text-center text-white">Money Acquired</div>
+                                    <% } else if (user.loanStatus === 4){ %>
+                                        <div class="text-center text-white">Money Repayed</div>
+                                    <% } %>
+                                </td>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="text-lg text-center">
+                                        <a href="#_" class="relative px-2 py-1 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-full shadow-inner group">
+                                            <span class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease rounded-full"></span>
+                                            <span class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease rounded-full"></span>
+                                            <span class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100 rounded-full"></span>
+                                            <span class="relative transition-colors duration-300 delay-200 group-hover:text-white ease text-sm">View</span>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% }) %>    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
+</section1>
+</section>
 </html>

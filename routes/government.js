@@ -1,5 +1,6 @@
 const express = require('express');
 const Gov = require("../models/government");
+const Student = require("../models/student");
 const { govsignin, govsignup } = require('../controllers/authController');
 
 const router = express.Router({ mergeParams: true });
@@ -23,7 +24,11 @@ router.route("/govdashboard")
     Gov.findOne({ username: reqUsername }, function (err, docs) {
       if (!err){
         if (docs && docs.userType === "government"){
-          res.render("govdashboard");
+          Student.find({state: docs.jurisdiction}, (error, students) => {
+            if (!error){
+              res.render("govdashboard", {userList: students});
+            }
+          });
         }else{
           res.redirect("/logout");
         }

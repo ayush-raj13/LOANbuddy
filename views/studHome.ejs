@@ -1,21 +1,65 @@
-<%-include("./partials/header1")-%>
-<link rel="stylesheet" href="css/studHome.css">
-<body class="min-h-screen flex flex-col space-y-4 justify-center items-center">
-    <h1 class="text-3xl font-bold">STUDENT HOME</h1>
-    <a class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out" href="/logout">LOGOUT</a>
-    <div class="dropdown">
-        <button class="dropbtn" onclick="myFunction()">State Government</button>
-        <div class="dropdown-content" id="myDropdown">
-          <a href="/studenthome/bihar" style="color: white;">Bihar</a>
-          <a href="/studenthome/west-bengal" style="color: white;">West Bengal</a>
-          <a href="/studenthome/jharkhand" style="color: white;">Jharkhand</a>
-          <a href="/studenthome/maharashtra" style="color: white;">Maharashtra</a>
-          <a href="/studenthome/odisha" style="color: white;">Odisha</a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/loginstyle.css">
+
+    <title>Student Home</title>
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="container">
+
+            <div class="top">
+
+                <header>Student home</header>
+            </div>
+            <div class="buttons">
+                <div class="input-field">
+                    <button><a href="/logout">Logout</a></button>
+                </div>
+
+                <div class="dropdown input-field">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        State Gov
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a href="/studenthome/bihar" class="dropdown-item">Bihar</a>
+                        <a href="/studenthome/west-bengal" class="dropdown-item">West bengal</a>
+                        <a href="/studenthome/jharkhand" class="dropdown-item">Jharkhand</a>
+                        <a href="/studenthome/maharashtra" class="dropdown-item">Maharastra</a>
+                        <a href="/studenthome/odisha" class="dropdown-item">Odisha</a>
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <button><a href="/studenthome/central">Cent gov</a></button>
+                </div>
+            </div>
         </div>
     </div>
-    <div>
-        <a class="bg-red-500 p-4 my-4 text-white" href="/studenthome/central">Central Government</a>
-    </div>
-    <script src="js/studHome.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>

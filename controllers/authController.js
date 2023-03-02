@@ -4,15 +4,26 @@ const Gov = require("../models/government");
 const passport = require('passport');
 
 const studsignin = async (req, res) => {
+  let location = true;
   Student.findOne({username: req.body.username}, function(err, docs){
     if(err) res.redirect("/studentlogin");
-    if(docs.state && req.body.state.toLowerCase() === docs.state){
+    if(docs.state && req.body.state.toLowerCase() === docs.state.toLowerCase()){
       console.log(req.body);
+      Student.findOneAndUpdate({username: req.body.username}, {location: true}, (error, doc) => {
+        if (!error) {
+          console.log("Location successfully verified!");
+        }
+      });
       return;
     } else {
       console.log(req.body.state);
+      Student.findOneAndUpdate({username: req.body.username}, {location: false, currentState: req.body.state}, (error, doc) => {
+        if (!error) {
+          console.log("User reallocated and address mismatch!");
+        }
+      });
     }
-  })
+  });
     //From passport documentation
   const student = new Student({
     username: req.body.username,

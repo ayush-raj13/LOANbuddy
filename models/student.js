@@ -19,6 +19,8 @@ const studentSchema = new mongoose.Schema({
     loanAmount: Number,
     loanStatus: Number,
     bank: String,
+    location: Boolean,
+    currentState: String,
   
     coApplicantName: String,
     coApplicantPhoto: String,

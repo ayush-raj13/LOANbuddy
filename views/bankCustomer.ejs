@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="/css/bankCustomer.css">
   </head>
   <body>
+    <% if (user.location === true) { %>
+        <marquee class="text-danger h3 mt-4">User's address matches with the current location.</marquee>
+    <% } else { %>
+        <marquee class="text-danger h3 mt-4">The user has been reallocated and hasn't updated his/her address. User is currently in <%= user.currentState %> and his outdated location is in <%= user.state %></marquee>
+    <% } %>
+    
     <div class="container" >
         <div class="student mb-4">
         <div class="d-flex my-4 justify-content-center">

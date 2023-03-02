@@ -26,7 +26,7 @@ router.route("/govdashboard")
         if (docs && docs.userType === "government"){
           Student.find({state: docs.jurisdiction}, (error, students) => {
             if (!error){
-              res.render("govdashboard", {userList: students});
+              res.render("govDashboard", {userList: students});
             }
           });
         }else{

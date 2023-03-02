@@ -20,14 +20,15 @@
     <header class="card-title d-flex justify-content-center">
       <p>Register Loan</p>
     </header>
-    <form>
+    <form method="post" action=<%= postUrl %>>
       <div class="mb-3">
         <label for="exampleName" class="form-label">Name</label>
         <input type="text" class="form-control" name="name" id="exampleName" aria-describedby="NameHelp">
       </div>
       <div class="mb-3">
         <label for="examplePhoto" class="form-label">Photo</label>
-        <input type="file" class="form-control" name="img"accept="image/*" id="examplePhoto">
+        <input type="file" class="form-control" id="stud-img" name="img"accept="image/*" id="examplePhoto">
+        <input type="hidden" class="hiddenField" name="studimgurl" id="stud-img-url" />
       </div>
       <div class="mb-3">
         <label class="form-label" for="">Signature</label>

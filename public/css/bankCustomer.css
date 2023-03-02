@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    position: relative;
+    box-sizing: border-box;
+    background:url('/img/bankCustomerBackground.jpg');
+    object-fit: contain;
+    
+    
+
+
+    
+}
+
+.student,
+.co-applicant{
+    width: 80%;
+    margin-left: 10%;
+   
+    
+    background: rgba(128, 215, 231, 0);
+    z-index: 10;
+    
+    border-radius: 20px;
+    position: relative;
+    border: 2px solid rgba(244, 219, 219, 0.784);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(25px);
+    box-shadow: -15px 17px 17px rgba(10,10,10,0.25);
+
+}

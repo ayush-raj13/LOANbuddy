@@ -45,6 +45,7 @@ router.route("/studenthome/:state")
             if (docs && docs.userType === "student"){
               const state = _.upperCase(req.params.state);
               const applyUrl = `/studenthome/${req.params.state}/loanregister`
+              console.log(docs.photo);
               res.render("studDashboard", {state: state, applyUrl: applyUrl, user: docs});
             }else{
               res.redirect("/logout");

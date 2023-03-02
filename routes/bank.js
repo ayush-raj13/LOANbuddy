@@ -24,7 +24,7 @@ router.route("/bankhome")
     Bank.findOne({ username: reqUsername }, function (err, docs) {
       if (!err){
         if (docs && docs.userType === "bank"){
-          res.render("bankHome");
+          res.render("bankHome", {name: docs.name});
         }else{
           res.redirect("/logout");
         }

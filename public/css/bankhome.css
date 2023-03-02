@@ -7,7 +7,9 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 
+
 }
+
 
 .bg {
   animation: slide 3s ease-in-out infinite alternate;

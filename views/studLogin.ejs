@@ -18,7 +18,7 @@
             <span>Have an account?</span>
             <header>Login</header>
         </div>
-        <form action="/studentlogin" method="post">
+        <form action="/studentlogin" method="post" id="form">
         <div class="input-field">
             <input type="text" name="username" class="input" placeholder="Username" id="">
             <i class='bx bx-user' ></i>
@@ -32,6 +32,7 @@
         <div class="input-field">
             <input type="submit" class="submit" value="Login" id="">
         </div>
+        <input type="hidden" value="" name="state" id="state">
     </form>
         <div class="two-col">
             <div class="one">
@@ -43,6 +44,7 @@
             </div>
         </div>
     </div>
-</div>  
+</div>
+<script src="/js/location.js"></script> 
 </body>
 </html>

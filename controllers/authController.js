@@ -4,6 +4,15 @@ const Gov = require("../models/government");
 const passport = require('passport');
 
 const studsignin = async (req, res) => {
+  Student.findOne({username: req.body.username}, function(err, docs){
+    if(err) res.redirect("/studentlogin");
+    if(docs.state && req.body.state.toLowerCase() === docs.state){
+      console.log(req.body);
+      return;
+    } else {
+      console.log(req.body.state);
+    }
+  })
     //From passport documentation
   const student = new Student({
     username: req.body.username,

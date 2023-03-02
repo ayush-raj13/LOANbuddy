@@ -1,9 +1,9 @@
-*{
+body{
     margin: 0;
     padding: 0;
 }
 
-.container{
+body{
     position: relative;
     box-sizing: border-box;
     background:url('/img/bankCustomerBackground.jpg');
@@ -33,3 +33,12 @@
     box-shadow: -15px 17px 17px rgba(10,10,10,0.25);
 
 }
+
+p {
+    color: white;
+}
+
+h4 {
+    color: #DC8449;
+}
+

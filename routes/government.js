@@ -40,4 +40,14 @@ router.route("/govdashboard")
   }
 });
 
+router.route("/govdashboard/:username")
+.get((req, res) => {
+  const customerUsername = req.params.username;
+  Student.findOne({username: customerUsername}, (err, student) => {
+    if (!err){
+      res.render("govCustomer", {user: student});
+    }
+  });
+});
+
 module.exports = router;

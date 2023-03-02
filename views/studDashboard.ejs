@@ -55,7 +55,7 @@
           <div class="h2 title"><%= user.name %></div>
           <p class="category text-white"><%= user.username %></p>
           <% if (!user.loanStatus) { %>
-            <a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Apply for Loan</a>
+            <a class="btn btn-primary smooth-scroll mr-2" href="<%= applyUrl %>" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Apply for Loan</a>
           <% } %>
         </div>
       </div>

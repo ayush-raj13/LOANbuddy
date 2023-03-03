@@ -20,14 +20,14 @@
     <header class="card-title d-flex justify-content-center">
       <p>Register Loan</p>
     </header>
-    <form method="post" action=<%= postUrl %>>
+    <form method="post" action=<%=postUrl %> id="form">
       <div class="mb-3">
         <label for="exampleName" class="form-label">Name</label>
         <input type="text" class="form-control" name="name" id="exampleName" aria-describedby="NameHelp">
       </div>
       <div class="mb-3">
         <label for="examplePhoto" class="form-label">Photo</label>
-        <input type="file" class="form-control" id="stud-img" name="img"accept="image/*" id="examplePhoto">
+        <input type="file" class="form-control" id="stud-img" name="img" accept="image/*" id="examplePhoto">
         <input type="hidden" class="hiddenField" name="studimgurl" id="stud-img-url" />
       </div>
       <div class="mb-3">
@@ -49,7 +49,7 @@
       </div>
       <div class="mb-3">
         <label class="form-label" for="">Aadhaar</label>
-        <input type="text" class="form-control" name="aadhaar" class="border-2 border-black">
+        <input type="text" class="form-control" name="aadhaar" class="border-2 border-black" id="aadhaar">
       </div>
       <div class="mb-3">
         <label class="form-label" for="">Select Bank</label>
@@ -108,7 +108,11 @@
         <input type="file" class="form-control" id="fee-structure" name="feestructure">
         <input type="hidden" class="hiddenField" name="feestructureurl" id="fee-structure-url" />
       </div>
-      <button type="submit" class="btn">Submit</button>
+      <div class="d-flex align-items-center" id="">
+        <button type="submit" class="btn mx-3" id="button">Submit</button>
+        <div class="mx-3" role="status" id="spinner"></div>
+        <div id="verify"></div>
+      </div>
     </form>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -120,8 +124,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
     integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
     crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/js/studLoanRegister.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/js/studLoanRegister.js"></script>
+  <script src="/js/aadhaarVerifaction.js"></script>
 </body>
 
 </html>

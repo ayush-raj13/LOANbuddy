@@ -1,6 +1,8 @@
 body{
     margin: 0;
     padding: 0;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(63, 134, 228));
+
 }
 
 body{
@@ -8,7 +10,7 @@ body{
     box-sizing: border-box;
     /* background:url('/img/bankCustomerBackground.jpg'); */
     object-fit: contain;
-    background-image: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif)
+    /* background-image: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif) */
     
     
 

@@ -555,6 +555,14 @@ video {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
 }
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -584,6 +592,9 @@ video {
 }
 .mt-5 {
   margin-top: 1.25rem;
+}
+.ml-2 {
+  margin-left: 0.5rem;
 }
 .block {
   display: block;
